@@ -1,0 +1,185 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "programs": "Oferta Educativa",
+    "admissions": "Admisiones",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Historia que construye.",
+    "subtitle": "Más de 65 años formando el futuro de Tijuana. Educación de calidad que transforma vidas.",
+    "cta": {
+      "primary": "Solicitar Información",
+      "secondary": "Conoce Más"
+    }
+  },
+  "trust": {
+    "years": {
+      "value": "65+",
+      "label": "Años de experiencia"
+    },
+    "programs": {
+      "value": "3",
+      "label": "Programas"
+    },
+    "official": {
+      "value": "100%",
+      "label": "Validación oficial"
+    },
+    "location": {
+      "value": "Central",
+      "label": "Ubicación"
+    }
+  },
+  "history": {
+    "title": "Nuestra Historia",
+    "year": "1958",
+    "content": "Cuando Tijuana necesitaba una escuela que creyera en el poder de la educación, nacimos con una visión clara: formar profesionales con propósito.",
+    "today": "Hoy, más de 65 generaciones después, continuamos evolucionando mientras honramos nuestras raíces.",
+    "partner": "Desde 2022, nuestra alianza con Grupo Ferdel trae metodologías STEAM e innovación a nuestro probado modelo educativo."
+  },
+  "differentiators": {
+    "title": "Qué nos diferencia",
+    "items": {
+      "official": {
+        "title": "Validación oficial",
+        "description": "Reconocimiento de la SEP para todos nuestros programas"
+      },
+      "career": {
+        "title": "Enfoque profesional",
+        "description": "Carreras diseñadas para el mercado laboral actual"
+      },
+      "support": {
+        "title": "Atención personalizada",
+        "description": "Seguimiento individual a cada estudiante"
+      },
+      "practical": {
+        "title": "Aprendizaje práctico",
+        "description": "Habilidades reales para tu futuro profesional"
+      },
+      "location": {
+        "title": "Ubicación central",
+        "description": "Fácil acceso en el corazón de Tijuana"
+      },
+      "results": {
+        "title": "Resultados comprobados",
+        "description": "Alta tasa de colocación universitaria"
+      }
+    }
+  },
+  "programs": {
+    "title": "Oferta Educativa",
+    "subtitle": "Programas que preparan para el futuro",
+    "preparatoria": {
+      "name": "Preparatoria Tecnológica",
+      "description": "Formación académica de excelencia con enfoque en ciencias, tecnología e ingeniería. Prepárate para la universidad o ingresa directamente al mercado laboral con habilidades sólidas.",
+      "features": ["Enfoque STEAM", "Laboratorios equipados", "Preparación universitaria"]
+    },
+    "administracion": {
+      "name": "Administración",
+      "description": "Desarrolla habilidades de liderazgo y gestión empresarial. Aprende a administrar recursos, equipos y proyectos con visión estratégica.",
+      "features": ["Gestión empresarial", "Liderazgo", "Planeación estratégica"]
+    },
+    "contabilidad": {
+      "name": "Contabilidad",
+      "description": "Domina las finanzas y la fiscalidad. Conviértete en un profesional esencial para cualquier organización.",
+      "features": ["Finanzas", "Fiscalidad", "Software especializado"]
+    },
+    "cta": "Ver más detalles"
+  },
+  "experience": {
+    "title": "La Experiencia Sor Juana",
+    "subtitle": "Una comunidad que apoya tu crecimiento",
+    "description": "Clases pequeñas. Atención individual. Un camino claro hacia la universidad o directamente a tu carrera. Ven a descubrir por qué miles de familias confían en nosotros."
+  },
+  "admissions": {
+    "title": "Proceso de Admisión",
+    "subtitle": "Tu camino hacia Sor Juana",
+    "steps": {
+      "1": {
+        "title": "Contacto inicial",
+        "description": "Solicita información o agenda una visita"
+      },
+      "2": {
+        "title": "Entrevista",
+        "description": "Conoce a nuestro equipo y haz preguntas"
+      },
+      "3": {
+        "title": "Evaluación",
+        "description": "Evaluación del estudiante"
+      },
+      "4": {
+        "title": "Decisión",
+        "description": "Recibe la respuesta de admisión"
+      },
+      "5": {
+        "title": "Inscripción",
+        "description": "Completa tu registro"
+      }
+    },
+    "cta": "Iniciar proceso"
+  },
+  "documents": {
+    "title": "Documentos requeridos",
+    "items": [
+      "Certificado de secundaria",
+      "Acta de nacimiento",
+      "CURP",
+      "Comprobante de domicilio",
+      "INE del padre/tutor"
+    ]
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "items": {
+      "cost": {
+        "question": "¿Cuál es el costo de la inscripción?",
+        "answer": "Contáctanos para obtener información detallada sobre colegiaturas y opciones de pago."
+      },
+      "location": {
+        "question": "¿Dónde está ubicada la escuela?",
+        "answer": "Estamos en una ubicación central en Tijuana, fácil de acceder desde cualquier punto de la ciudad."
+      },
+      "schedule": {
+        "question": "¿Cuáles son los horarios?",
+        "answer": "Nuestros horarios son de lunes a viernes, con jornadas completas que preparan a los estudiantes para el éxito académico."
+      },
+      "transport": {
+        "question": "¿Ofrecen transporte escolar?",
+        "answer": "Contáctanos para conocer las opciones de transporte disponibles en tu zona."
+      },
+      "food": {
+        "question": "¿Tienen servicio de alimentación?",
+        "answer": "Contamos con opciones de alimentación sana y balanceada para los estudiantes."
+      }
+    }
+  },
+  "cta": {
+    "title": "Inicia la historia de tu hijo aquí",
+    "subtitle": "Únete a la siguiente generación de estudiantes Sor Juana. Espacios limitados disponibles para el próximo ciclo escolar.",
+    "button": "Solicitar Información",
+    "phone": "O llámanos"
+  },
+  "footer": {
+    "programs": "Programas",
+    "contact": "Contacto",
+    "location": "Ubicación",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "copyright": "Instituto Sor Juana Inés de la Cruz. Tijuana, Baja California, México."
+  },
+  "form": {
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "program": "Programa de interés",
+    "message": "Mensaje",
+    "submit": "Enviar",
+    "sending": "Enviando...",
+    "success": "¡Gracias! Tu información ha sido enviada exitosamente.",
+    "error": "Hubo un error. Por favor intenta nuevamente.",
+    "required": "Este campo es requerido",
+    "invalidEmail": "Por favor ingresa un correo válido"
+  }
+}

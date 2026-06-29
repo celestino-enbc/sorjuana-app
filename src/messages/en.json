@@ -1,0 +1,185 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "programs": "Programs",
+    "admissions": "Admissions",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "History that builds.",
+    "subtitle": "More than 65 years shaping Tijuana's future. Quality education that transforms lives.",
+    "cta": {
+      "primary": "Request Information",
+      "secondary": "Learn More"
+    }
+  },
+  "trust": {
+    "years": {
+      "value": "65+",
+      "label": "Years of experience"
+    },
+    "programs": {
+      "value": "3",
+      "label": "Programs"
+    },
+    "official": {
+      "value": "100%",
+      "label": "Official validation"
+    },
+    "location": {
+      "value": "Central",
+      "label": "Location"
+    }
+  },
+  "history": {
+    "title": "Our History",
+    "year": "1958",
+    "content": "When Tijuana needed a school that believed in the power of education, we were born with a clear vision: to build professionals with purpose.",
+    "today": "Today, more than 65 generations later, we continue to evolve while honoring our roots.",
+    "partner": "Since 2022, our partnership with Grupo Ferdel brings STEAM methodologies and innovation to our proven educational model."
+  },
+  "differentiators": {
+    "title": "What sets us apart",
+    "items": {
+      "official": {
+        "title": "Official Accreditation",
+        "description": "SEP recognition for all our programs"
+      },
+      "career": {
+        "title": "Career Focused",
+        "description": "Degrees designed for today's job market"
+      },
+      "support": {
+        "title": "Personalized Support",
+        "description": "Individual attention for each student"
+      },
+      "practical": {
+        "title": "Practical Learning",
+        "description": "Real skills for your future career"
+      },
+      "location": {
+        "title": "Central Location",
+        "description": "Easy access in the heart of Tijuana"
+      },
+      "results": {
+        "title": "Proven Results",
+        "description": "High university placement rate"
+      }
+    }
+  },
+  "programs": {
+    "title": "Educational Programs",
+    "subtitle": "Programs that prepare for the future",
+    "preparatoria": {
+      "name": "Technological High School",
+      "description": "Excellence in academic training with focus on science, technology, and engineering. Prepare for university or enter the workforce with solid skills.",
+      "features": ["STEAM focus", "Equipped labs", "University preparation"]
+    },
+    "administracion": {
+      "name": "Administration",
+      "description": "Develop leadership and business management skills. Learn to manage resources, teams, and projects with strategic vision.",
+      "features": ["Business management", "Leadership", "Strategic planning"]
+    },
+    "contabilidad": {
+      "name": "Accounting",
+      "description": "Master finance and taxation. Become an essential professional for any organization.",
+      "features": ["Finance", "Taxation", "Specialized software"]
+    },
+    "cta": "View more details"
+  },
+  "experience": {
+    "title": "The Sor Juana Experience",
+    "subtitle": "A community that supports your growth",
+    "description": "Small classes. Individual attention. A clear path to university or directly to your career. Come discover why thousands of families trust us."
+  },
+  "admissions": {
+    "title": "Admission Process",
+    "subtitle": "Your path to Sor Juana",
+    "steps": {
+      "1": {
+        "title": "Initial Contact",
+        "description": "Request information or schedule a visit"
+      },
+      "2": {
+        "title": "Interview",
+        "description": "Meet our team and ask questions"
+      },
+      "3": {
+        "title": "Assessment",
+        "description": "Student evaluation"
+      },
+      "4": {
+        "title": "Decision",
+        "description": "Receive admission decision"
+      },
+      "5": {
+        "title": "Enrollment",
+        "description": "Complete your registration"
+      }
+    },
+    "cta": "Start Process"
+  },
+  "documents": {
+    "title": "Required Documents",
+    "items": [
+      "High school certificate",
+      "Birth certificate",
+      "CURP",
+      "Proof of address",
+      "Parent/guardian ID"
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": {
+      "cost": {
+        "question": "What is the tuition cost?",
+        "answer": "Contact us for detailed information about tuition and payment options."
+      },
+      "location": {
+        "question": "Where is the school located?",
+        "answer": "We are in a central location in Tijuana, easy to access from anywhere in the city."
+      },
+      "schedule": {
+        "question": "What are the school hours?",
+        "answer": "Our hours are Monday through Friday, with full days that prepare students for academic success."
+      },
+      "transport": {
+        "question": "Do you offer transportation?",
+        "answer": "Contact us to learn about transportation options available in your area."
+      },
+      "food": {
+        "question": "Do you have food service?",
+        "answer": "We offer healthy and balanced meal options for students."
+      }
+    }
+  },
+  "cta": {
+    "title": "Start your child's story here",
+    "subtitle": "Join the next generation of Sor Juana students. Limited spaces available for the next school year.",
+    "button": "Request Information",
+    "phone": "Or call us"
+  },
+  "footer": {
+    "programs": "Programs",
+    "contact": "Contact",
+    "location": "Location",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "Instituto Sor Juana Inés de la Cruz. Tijuana, Baja California, Mexico."
+  },
+  "form": {
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone",
+    "program": "Program of interest",
+    "message": "Message",
+    "submit": "Send",
+    "sending": "Sending...",
+    "success": "Thank you! Your information has been sent successfully.",
+    "error": "There was an error. Please try again.",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email"
+  }
+}

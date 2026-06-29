@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-plus-jakarta);
+  --font-body: var(--font-inter);
+  --font-accent: var(--font-fraunces);
+
+  --color-primary-deep: #1A1A2E;
+  --color-primary: #16213E;
+  --color-primary-light: #1F3460;
+  --color-accent: #E94560;
+  --color-accent-hover: #D63A54;
+  --color-accent-light: #FF6B6B;
+  --color-secondary: #0F3460;
+  --color-secondary-hover: #0A2440;
+  --color-success: #198754;
+  --color-success-light: #D1E7DD;
+  --color-warning: #FFC107;
+  --color-warning-light: #FFF3CD;
+  --color-error: #DC3545;
+  --color-error-light: #F8D7DA;
+  --color-info: #0F3460;
+  --color-info-light: #CFE2FF;
+}
+
+@layer base {
+  :root {
+    --font-plus-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-inter: "Inter", system-ui, sans-serif;
+    --font-fraunces: "Fraunces", Georgia, serif;
+
+    --background: #FFFFFF;
+    --foreground: #1A1A2E;
+    --card: #FFFFFF;
+    --card-foreground: #1A1A2E;
+    --popover: #FFFFFF;
+    --popover-foreground: #1A1A2E;
+    --primary: #16213E;
+    --primary-foreground: #FFFFFF;
+    --secondary: #F8F9FA;
+    --secondary-foreground: #1A1A2E;
+    --muted: #F8F9FA;
+    --muted-foreground: #495057;
+    --accent: #E94560;
+    --accent-foreground: #FFFFFF;
+    --destructive: #DC3545;
+    --destructive-foreground: #FFFFFF;
+    --border: #E9ECEF;
+    --input: #DEE2E6;
+    --ring: #0F3460;
+    --radius: 0.5rem;
+    --chart-1: #E94560;
+    --chart-2: #0F3460;
+    --chart-3: #1A1A2E;
+    --chart-4: #6C757D;
+    --chart-5: #ADB5BD;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0A0A14;
+      --foreground: #F8F9FA;
+      --card: #16162A;
+      --card-foreground: #F8F9FA;
+      --popover: #16162A;
+      --popover-foreground: #F8F9FA;
+      --primary: #F8F9FA;
+      --primary-foreground: #1A1A2E;
+      --secondary: #16162A;
+      --secondary-foreground: #F8F9FA;
+      --muted: #16162A;
+      --muted-foreground: #ADB5BD;
+      --accent: #E94560;
+      --accent-foreground: #FFFFFF;
+      --destructive: #DC3545;
+      --destructive-foreground: #FFFFFF;
+      --border: #212529;
+      --input: #212529;
+      --ring: #ADB5BD;
+    }
+  }
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    font-family: var(--font-inter);
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-plus-jakarta);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  p {
+    max-width: 65ch;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button, input, select, textarea {
+    font: inherit;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-main {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-main {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-main {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+
+  .section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .section {
+      padding-top: 7.5rem;
+      padding-bottom: 7.5rem;
+    }
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(26, 26, 46, 0) 0%,
+      rgba(26, 26, 46, 0.4) 50%,
+      rgba(26, 26, 46, 0.8) 100%
+    );
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--border) 20%,
+      var(--border) 80%,
+      transparent 100%
+    );
+  }
+
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--muted) 25%,
+      var(--secondary) 50%,
+      var(--muted) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: var(--primary-foreground);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    z-index: 100;
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .animate-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .aspect-video-hero {
+    aspect-ratio: 21 / 9;
+  }
+
+  @media (max-width: 768px) {
+    .aspect-video-hero {
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  .focus-ring {
+    outline: none;
+  }
+
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
