@@ -1,24 +1,20 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter, Fraunces } from "next/font/google";
+import { Cormorant_Garamond, Proza_Libre } from "next/font/google";
 import { I18nProvider } from "@/components/i18n-provider";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant-garamond",
   subsets: ["latin", "latin-ext"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const prozaLibre = Proza_Libre({
+  variable: "--font-proza-libre",
   subsets: ["latin", "latin-ext"],
   display: "swap",
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -39,6 +35,10 @@ export const metadata: Metadata = {
   creator: "Instituto Sor Juana Inés de la Cruz",
   publisher: "Instituto Sor Juana Inés de la Cruz",
   metadataBase: new URL("https://sorjuana.edu.mx"),
+  icons: {
+    icon: "/images/favicon_sorjuana.png",
+    apple: "/images/favicon_sorjuana.png",
+  },
   openGraph: {
     type: "website",
     locale: "es_MX",
@@ -68,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="h-full">
       <body
-        className={`${plusJakarta.variable} ${inter.variable} ${fraunces.variable} min-h-full antialiased`}
+        className={`${cormorantGaramond.variable} ${prozaLibre.variable} min-h-full antialiased`}
       >
         <I18nProvider>{children}</I18nProvider>
       </body>

@@ -13,7 +13,7 @@ A premium bilingual landing page for Instituto Sor Juana Inés de la Cruz, a pri
 ### Core
 - **Full Bilingual Support**: Spanish (Mexico) and English (United States)
 - **Responsive Design**: Mobile-first, works on all devices
-- **Premium Typography**: Plus Jakarta Sans, Inter, Fraunces
+- **Premium Typography**: Cormorant Garamond (titles), Proza Libre (body)
 - **Smooth Animations**: Framer Motion for scroll reveals and microinteractions
 - **Accessibility**: WCAG 2.2 AA considerations
 
@@ -122,21 +122,19 @@ npm run lint
 
 | Name | Hex | Usage |
 |------|-----|-------|
-| Primary Deep | #1A1A2E | Headings, text |
-| Primary | #16213E | Navigation, emphasis |
-| Accent | #E94560 | CTAs, highlights |
-| Accent Hover | #D63A54 | Button hover |
-| Secondary | #0F3460 | Links, secondary |
-| White | #FFFFFF | Backgrounds |
-| Off-White | #F8F9FA | Section backgrounds |
+| Black | #050504 | Darkest backgrounds, body text |
+| Shadow Grey | #2A2827 | Headings, navigation, secondary |
+| Olive Leaf | #0C5C02 | CTAs, highlights, accents |
+| Accent Hover | #094A02 | Button hover |
+| Snow | #FDF7F9 | Main backgrounds, cards |
+| Bright Snow | #FCF9F6 | Section backgrounds, muted surfaces |
 
 ### Typography
 
 | Font | Usage | Weights |
 |------|-------|---------|
-| Plus Jakarta Sans | Headlines, display | 400-800 |
-| Inter | Body text | 300-600 |
-| Fraunces | Quotes, accent | 300-900 |
+| Cormorant Garamond | Headlines, display, titles | 400-700 |
+| Proza Libre | Body text, UI | 400-700 |
 
 ### Type Scale
 

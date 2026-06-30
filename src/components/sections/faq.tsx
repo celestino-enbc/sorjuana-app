@@ -16,39 +16,47 @@ export function FAQ() {
   const { t } = useI18n();
 
   return (
-    <section id="faq" ref={ref} className="bg-white">
-      <Container>
-        {/* Section Header */}
-        <motion.div
+    <section
+      id="faq"
+      ref={ref}
+      aria-labelledby="faq-title"
+      className="section section-faq bg-white"
+    >
+      <Container className="section-faq__container">
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
+          className="section__header section-faq__header"
         >
-          <h2 className="text-h2 text-primary-deep mb-4">{t("faq.title")}</h2>
-        </motion.div>
+          <h2 id="faq-title" className="section__title section-faq__title">
+            {t("faq.title")}
+          </h2>
+        </motion.header>
 
-        {/* FAQ Accordion */}
-        <div className="max-w-2xl mx-auto">
+        <div className="section-faq__accordion max-w-2xl mx-auto">
           {faqItems.map((item, index) => (
             <motion.div
               key={item}
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="border-b border-neutral-light"
+              className="section-faq__item border-b border-neutral-light"
             >
               <button
+                type="button"
+                id={`faq-question-${item}`}
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full py-5 flex items-center justify-between text-left"
+                className="section-faq__question w-full py-5 flex items-center justify-between text-left"
                 aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${item}`}
               >
-                <span className="text-body-md font-medium text-primary-deep pr-4">
+                <span className="section-faq__question-text text-body-md font-medium text-primary-deep pr-4">
                   {t(`faq.${item}.question`)}
                 </span>
                 <ChevronDown
                   className={cn(
-                    "w-5 h-5 text-neutral-400 flex-shrink-0 transition-transform duration-200",
+                    "section-faq__question-icon w-5 h-5 text-neutral-400 flex-shrink-0 transition-transform duration-200",
                     openIndex === index && "rotate-180"
                   )}
                 />
@@ -57,13 +65,16 @@ export function FAQ() {
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
+                    id={`faq-answer-${item}`}
+                    role="region"
+                    aria-labelledby={`faq-question-${item}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.2 }}
-                    className="overflow-hidden"
+                    className="section-faq__answer overflow-hidden"
                   >
-                    <p className="pb-5 text-body-sm text-neutral-500">
+                    <p className="section-faq__answer-text pb-5 text-body-sm text-neutral-500">
                       {t(`faq.${item}.answer`)}
                     </p>
                   </motion.div>

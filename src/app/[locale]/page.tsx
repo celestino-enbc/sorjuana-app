@@ -32,7 +32,7 @@ export default async function LocalePage({
   return (
     <>
       <Navigation />
-      <main className="min-h-screen">
+      <main className="site-main min-h-screen">
         <Hero />
         <TrustBar />
         <History />

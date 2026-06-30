@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
+import { CONTACT } from "@/lib/contact";
 
 export function FloatingWhatsApp() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +19,7 @@ export function FloatingWhatsApp() {
 
   return (
     <motion.a
-      href="https://wa.me/52664XXXXXXX"
+      href={CONTACT.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ opacity: 0, scale: 0 }}

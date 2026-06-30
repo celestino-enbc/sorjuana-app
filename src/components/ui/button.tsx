@@ -1,12 +1,14 @@
 "use client";
 
-import { forwardRef, ButtonHTMLAttributes } from "react";
+import { forwardRef, ButtonHTMLAttributes, type AnchorHTMLAttributes, type ForwardedRef } from "react";
 import { cn } from "@/lib/utils";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "ghost" | "outline";
   size?: "sm" | "md" | "lg";
   isLoading?: boolean;
+  href?: string;
+  external?: boolean;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -17,6 +19,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       size = "md",
       isLoading,
       disabled,
+      href,
+      external,
       children,
       ...props
     },
@@ -42,40 +46,58 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       lg: "h-14 px-8 text-lg",
     };
 
+    const styles = cn(baseStyles, variants[variant], sizes[size], className);
+    const content = isLoading ? (
+      <span className="flex items-center gap-2">
+        <svg
+          className="animate-spin h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          />
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          />
+        </svg>
+        <span>Loading...</span>
+      </span>
+    ) : (
+      children
+    );
+
+    if (href) {
+      return (
+        <a
+          ref={ref as ForwardedRef<HTMLAnchorElement>}
+          href={href}
+          className={styles}
+          aria-disabled={disabled || isLoading}
+          {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+        >
+          {content}
+        </a>
+      );
+    }
+
     return (
       <button
         ref={ref}
-        className={cn(baseStyles, variants[variant], sizes[size], className)}
+        className={styles}
         disabled={disabled || isLoading}
         {...props}
       >
-        {isLoading ? (
-          <span className="flex items-center gap-2">
-            <svg
-              className="animate-spin h-4 w-4"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              />
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-              />
-            </svg>
-            <span>Loading...</span>
-          </span>
-        ) : (
-          children
-        )}
+        {content}
       </button>
     );
   }

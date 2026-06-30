@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, GraduationCap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BrandLogo } from "@/components/ui/brand-logo";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/components/i18n-provider";
+import { getWhatsAppUrl } from "@/lib/contact";
 
 const navLinks = [
   { href: "#history", key: "about" },
@@ -20,7 +22,6 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
   const { locale, setLocale, t } = useI18n();
 
   useEffect(() => {
@@ -41,6 +42,8 @@ export function Navigation() {
     setLocale(newLocale);
   };
 
+  const isOverHero = !isScrolled;
+
   return (
     <header
       className={cn(
@@ -52,15 +55,8 @@ export function Navigation() {
     >
       <nav className="container-main flex items-center justify-between h-16 md:h-18">
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-primary-deep font-display font-bold text-lg md:text-xl"
-        >
-          <GraduationCap className="w-8 h-8 text-accent" />
-          <span className="hidden sm:block">
-            Instituto Sor Juana
-            <span className="hidden md:inline text-accent"> Inés de la Cruz</span>
-          </span>
+        <Link href="/" className="flex items-center font-display font-bold">
+          <BrandLogo priority variant={isOverHero ? "white" : "default"} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -69,7 +65,12 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-neutral-500 hover:text-primary-deep transition-colors relative group"
+              className={cn(
+                "text-sm font-medium transition-colors relative group",
+                isOverHero
+                  ? "text-white/80 hover:text-white"
+                  : "text-neutral-500 hover:text-primary-deep"
+              )}
             >
               {t(`nav.${link.key}`)}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-200 group-hover:w-full" />
@@ -82,24 +83,37 @@ export function Navigation() {
           {/* Language Switcher */}
           <button
             onClick={toggleLocale}
-            className="text-sm font-semibold text-neutral-500 hover:text-primary-deep transition-colors flex items-center gap-1"
+            className={cn(
+              "text-sm font-semibold transition-colors flex items-center gap-1",
+              isOverHero
+                ? "text-white/80 hover:text-white"
+                : "text-neutral-500 hover:text-primary-deep"
+            )}
             aria-label="Switch language"
           >
             <span className={cn(locale === "es" && "text-accent")}>ES</span>
-            <span className="text-neutral-300">|</span>
+            <span className={cn(isOverHero ? "text-white/40" : "text-neutral-300")}>
+              |
+            </span>
             <span className={cn(locale === "en" && "text-accent")}>EN</span>
           </button>
 
           {/* CTA Button */}
-          <Link href="#contact" className="hidden md:block">
-            <Button size="sm">
-              {t("hero.cta.primary")}
-            </Button>
-          </Link>
+          <Button
+            href={getWhatsAppUrl(locale)}
+            external
+            size="sm"
+            className="hidden md:inline-flex"
+          >
+            {t("hero.cta.primary")}
+          </Button>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden p-2 text-primary-deep"
+            className={cn(
+              "lg:hidden p-2",
+              isOverHero ? "text-white" : "text-primary-deep"
+            )}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileMenuOpen}
@@ -133,11 +147,13 @@ export function Navigation() {
                   {t(`nav.${link.key}`)}
                 </Link>
               ))}
-              <Link href="#contact" className="mt-2">
-                <Button className="w-full">
-                  {t("hero.cta.primary")}
-                </Button>
-              </Link>
+              <Button
+                href={getWhatsAppUrl(locale)}
+                external
+                className="w-full mt-2"
+              >
+                {t("hero.cta.primary")}
+              </Button>
             </div>
           </motion.div>
         )}

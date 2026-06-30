@@ -1,14 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { GraduationCap, MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { Container } from "@/components/ui/container";
+import { BrandLogo } from "@/components/ui/brand-logo";
 import { useI18n } from "@/components/i18n-provider";
+import { CONTACT } from "@/lib/contact";
 
 const programs = ["preparatoria", "administracion", "contabilidad"];
 
 export function Footer() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   return (
     <footer className="bg-primary-deep text-white">
@@ -16,9 +18,9 @@ export function Footer() {
         <div className="py-12 md:py-16 grid md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand Column */}
           <div className="md:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2 text-xl font-bold mb-4">
-              <GraduationCap className="w-8 h-8 text-accent" />
-              <span>Instituto Sor Juana</span>
+            <Link href="/" className="inline-flex items-center gap-3 mb-4">
+              <BrandLogo variant="white" />
+              <span className="text-xl font-bold">Instituto Sor Juana</span>
             </Link>
             <p className="text-body-sm text-white/60 max-w-sm mb-6">
               {t("footer.copyright")}
@@ -26,18 +28,29 @@ export function Footer() {
 
             {/* Contact Info */}
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-body-sm text-white/80">
-                <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
-                <span>Tijuana, Baja California, México</span>
-              </div>
-              <div className="flex items-center gap-3 text-body-sm text-white/80">
+              <a
+                href={CONTACT.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 text-body-sm text-white/80 hover:text-accent transition-colors"
+              >
+                <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                <span>{CONTACT.address[locale]}</span>
+              </a>
+              <a
+                href={`tel:${CONTACT.phoneTel}`}
+                className="flex items-center gap-3 text-body-sm text-white/80 hover:text-accent transition-colors"
+              >
                 <Phone className="w-4 h-4 text-accent flex-shrink-0" />
-                <span>+52 (664) XXX-XXXX</span>
-              </div>
-              <div className="flex items-center gap-3 text-body-sm text-white/80">
+                <span>{CONTACT.phone}</span>
+              </a>
+              <a
+                href={`mailto:${CONTACT.email}`}
+                className="flex items-center gap-3 text-body-sm text-white/80 hover:text-accent transition-colors"
+              >
                 <Mail className="w-4 h-4 text-accent flex-shrink-0" />
-                <span>info@sorjuana.edu.mx</span>
-              </div>
+                <span>{CONTACT.email}</span>
+              </a>
             </div>
           </div>
 

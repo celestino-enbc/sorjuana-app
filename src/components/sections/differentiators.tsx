@@ -21,38 +21,43 @@ export function Differentiators() {
   const { t } = useI18n();
 
   return (
-    <section id="differentiators" ref={ref} className="bg-neutral-off-white">
-      <Container>
-        {/* Section Header */}
-        <motion.div
+    <section
+      id="differentiators"
+      ref={ref}
+      aria-labelledby="differentiators-title"
+      className="section section-differentiators bg-neutral-off-white"
+    >
+      <Container className="section-differentiators__container">
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
+          className="section__header section-differentiators__header"
         >
-          <h2 className="text-h2 text-primary-deep mb-4">{t("differentiators.title")}</h2>
-        </motion.div>
+          <h2 id="differentiators-title" className="section__title section-differentiators__title">
+            {t("differentiators.title")}
+          </h2>
+        </motion.header>
 
-        {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="section-differentiators__grid grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <motion.div
+            <motion.article
               key={feature.key}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-6 md:p-8 rounded-lg shadow-level-1 hover:shadow-level-2 transition-shadow duration-300"
+              className="section-differentiators__card bg-white p-6 md:p-8 rounded-lg shadow-level-1 hover:shadow-level-2 transition-shadow duration-300"
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+              <div className="section-differentiators__card-icon w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
                 <feature.icon className="w-6 h-6 text-accent" />
               </div>
-              <h3 className="text-h4 text-primary-deep mb-2">
+              <h3 className="section-differentiators__card-title text-h4 text-primary-deep mb-2">
                 {t(`differentiators.${feature.key}.title`)}
               </h3>
-              <p className="text-body-sm text-neutral-500">
+              <p className="section-differentiators__card-description text-body-sm text-neutral-500">
                 {t(`differentiators.${feature.key}.description`)}
               </p>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </Container>
